@@ -1,0 +1,35 @@
+{
+	"name": "rimco-php/plugin",
+	"description": "Very simple plugin system used in Rimco",
+	"keywords": ["plugin", "hook", "filter"],
+	"homepage": "https://github.com/rimco-php/plugin",
+	"license": "LGPL-3.0",
+	"require":
+	{
+		"php" : ">=7.0.0",
+		"ext-spl" : "*",
+		"ext-dom" : "*",
+		"ext-json" : "*"
+	},
+
+	"autoload":
+	{
+		"psr-4" :
+		{
+			"Rimco\\Plugin\\" : "src"
+		}
+	},
+
+	"require-dev":
+	{
+		"phpunit/phpunit": "^7.5"
+	},
+
+        "autoload-dev":
+	{
+		"psr-4":
+		{
+			"Rimco\\Plugin\\Tests\\": "tests/"
+		}
+        }
+}
