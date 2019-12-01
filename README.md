@@ -108,7 +108,7 @@ Before being able to use a plugin extension, you must load it up. You do that by
 
 To get a list of all loaded plugin extensions, you call ``\Rimco\Plugin\Register::loaded()``
 ```php
-	print_r( \Rimco\Plugin\Register::loaded() );
+print_r( \Rimco\Plugin\Register::loaded() );
 ```
 It will return a key/value list, there the class of the extension is the key, and the actual extension object is the value:
 ```
