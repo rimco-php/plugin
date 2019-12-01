@@ -126,8 +126,7 @@ Array
 ```
 
 ## Sample Extension
-
-Here's what a plugin extension looks like
+Here's what a plugin extension looks like. Intentionally both the filter and the action methods are called "test" to demonstrate that this is possible. Also you will find both types of method priorities used - the action using the ``\Rimco\Plugin\Extension::$priority`` property, and filter using the docBlock declaration. 
 ```php
 class ProbaExtension extends \Rimco\Plugin\Extension
 {
