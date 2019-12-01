@@ -96,15 +96,33 @@ If by any chance you are using both ways, the ``\Rimco\Plugin\Extension::$priori
 ### Disabling Methods
 In some rare occasions you might need to disable a certain method: like when some plugin extensions are colliding with each other, or like when certain action should not be performed. In these odd cases, use ``\Rimco\Plugin\Call::disable()`` and ``\Rimco\Plugin\Call::enable()`` methods.
 ```php
-
-	// disables ProbaExtension::action_after_login()
-	\Rimco\Plugin\Call::disable('action_after_login', ProbaExtension::class);
+// disables ProbaExtension::action_after_login()
+\Rimco\Plugin\Call::disable('action_after_login', ProbaExtension::class);
 ```
 
 ## Extension Loading
 Before being able to use a plugin extension, you must load it up. You do that by passing the extension object to ``\Rimco\Plugin\Register::load()``:
 ```php
-	\Rimco\Plugin\Register::load(new ProbaExtension);
+\Rimco\Plugin\Register::load(new ProbaExtension);
+```
+
+To get a list of all loaded plugin extensions, you call ``\Rimco\Plugin\Register::loaded()``
+```php
+	print_r( \Rimco\Plugin\Register::loaded() );
+```
+It will return a key/value list, there the class of the extension is the key, and the actual extension object is the value:
+```
+Array
+(
+    [ProbaExtension] => ProbaExtension Object
+        (
+            [priority] => Array
+                (
+                )
+
+        )
+
+)
 ```
 
 ## Sample Extension
